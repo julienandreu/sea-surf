@@ -1,0 +1,32 @@
+{
+  "author": "Julien Andreu <julienandreu@me.com>",
+  "bin": "dist/src/cli.js",
+  "bugs": {
+    "url": "https://github.com/julienandreu/sea-surf/issues"
+  },
+  "dependencies": {},
+  "description": "🏄",
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "homepage": "https://github.com/julienandreu/sea-surf",
+  "license": "MIT",
+  "name": "sea-surf",
+  "repository": "git@github.com:julienandreu/sea-surf.git",
+  "scripts": {
+    "build": "rm -rf dist && tsc --project tsconfig.json && chmod +x ./dist/cli.js",
+    "deploy": "npm run build && npm publish",
+    "dev": "npm run build && node ./dist/cli.js",
+    "lint": "eslint src generated --fix",
+    "format": "prettier src generated --write --log-level error",
+    "type-check": "tsc -p ./tsconfig.json"
+  },
+  "version": "0.1.0-alpha.1"
+}
